@@ -3,8 +3,10 @@ import mongoose from "mongoose";
 import CreateUser from "./routes/CreateUser.js";
 import cors from "cors";
 import DisplayData from "./routes/DisplayData.js";
+import OrderData from "./routes/OrderData.js";
 
 const app = express();
+
 const mongoDBURL =
   "mongodb+srv://nandini:inidnan@cluster0.jhnsmcm.mongodb.net/go-food-mern?retryWrites=true&w=majority";
 const port = 4000;
@@ -18,6 +20,7 @@ app.use(express.json());
 
 app.use("/api", CreateUser);
 app.use("/api", DisplayData);
+app.use("/api", OrderData);
 
 mongoose
   .connect(mongoDBURL, { useNewUrlParser: true })
